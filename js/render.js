@@ -532,8 +532,52 @@
     const myBuscos = all.filter(l => l.userId === me.id && l.type === 'busco');
     const allMatches = T.MATCHES.concat(state.customMatches);
 
+    const matchesHtml = `
+      <div class="mm-agent-status ${state.agentRunning ? 'run' : ''}">
+        <div class="ico">${T.icon('cpu', 18)}</div>
+        <div style="flex:1">
+          <div class="ti">${state.agentRunning ? 'Agente analizando reglas…' : 'Agente en reposo'}</div>
+          <div class="sub">${state.agentRunning
+            ? `<code>?- match(PedidoId, OfertaId, Score).</code>`
+            : 'Última corrida: hace unos segundos · 3 reglas activas'}</div>
+        </div>
+      </div>
+      ${myBuscos.length === 0
+        ? `<div class="mm-empty" style="margin-top:20px"><p>Crea un 'Busco' desde Publicar y el agente buscará por ti.</p></div>`
+        : `<div style="display:flex; flex-direction:column; gap:16px; margin-top:20px">
+            ${myBuscos.map(b => T.buscoMatchCard(b, allMatches.filter(m => m.pedidoId === b.id), all, state)).join('')}
+          </div>`}
+    `;
+
+    const chatHtml = `
+      <div class="mm-chatbot">
+        <div class="mm-cb-hdr">
+          <div class="ico">${T.icon('sparkle', 16, 'white')}</div>
+          <div style="flex:1">
+            <div class="ti">Mercadillo Bot</div>
+            <div class="su">Asistente de inteligencia artificial</div>
+          </div>
+        </div>
+        <div class="mm-cb-body">
+          <div class="mm-cb-msg bot">
+            ¡Hola! Soy el agente de Mercadillo Market. ¿En qué te puedo ayudar hoy?
+          </div>
+          <div class="mm-cb-msg user">
+            Hola, ¿hay calculadoras en La Molina?
+          </div>
+          <div class="mm-cb-msg bot">
+            He encontrado 2 calculadoras en La Molina. Te sugiero crear un "Busco" para que te notifique apenas se publique una nueva.
+          </div>
+        </div>
+        <div class="mm-cb-input">
+          <input type="text" placeholder="Pregúntale al agente..." disabled />
+          <button disabled>${T.icon('send', 14, 'white')}</button>
+        </div>
+      </div>
+    `;
+
     return `
-      <div class="mm-page-medium mm-matches-head">
+      <div class="mm-page-large mm-matches-head">
         <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px">
           <h1>Tus matches</h1>
           <span class="mm-prolog-badge">${T.icon('cpu', 11, '#854d0e')} motor lógico · Prolog</span>
@@ -541,21 +585,11 @@
         <p style="margin:0 0 24px; font-size:13px; color:var(--slate-500)">
           El agente cruza tus "Busco" con las ofertas activas y te avisa cuando aparece algo compatible.
         </p>
-        <div class="mm-agent-status ${state.agentRunning ? 'run' : ''}">
-          <div class="ico">${T.icon('cpu', 18)}</div>
-          <div style="flex:1">
-            <div class="ti">${state.agentRunning ? 'Agente analizando reglas…' : 'Agente en reposo'}</div>
-            <div class="sub">${state.agentRunning
-              ? `<code>?- match(PedidoId, OfertaId, Score).</code>`
-              : 'Última corrida: hace unos segundos · 3 reglas activas'}</div>
-          </div>
+        
+        <div class="mm-matches-layout">
+          <div class="col-matches">${matchesHtml}</div>
+          <div class="col-chat">${chatHtml}</div>
         </div>
-
-        ${myBuscos.length === 0
-          ? `<div class="mm-empty" style="margin-top:20px"><p>Crea un 'Busco' desde Publicar y el agente buscará por ti.</p></div>`
-          : `<div style="display:flex; flex-direction:column; gap:16px; margin-top:20px">
-              ${myBuscos.map(b => T.buscoMatchCard(b, allMatches.filter(m => m.pedidoId === b.id), all, state)).join('')}
-            </div>`}
       </div>`;
   };
 

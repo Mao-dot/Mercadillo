@@ -99,6 +99,7 @@ MM.icon = (name, size = 18, color = 'currentColor', stroke = 1.6) => {
     logout:   `<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5M21 12H9"/>`,
     cpu:      `<rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/>`,
     edit:     `<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 1 1 3 3L7 19l-4 1 1-4z"/>`,
+    send:     `<path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/>`,
   };
   return `<svg ${p}>${paths[name] || ''}</svg>`;
 };
