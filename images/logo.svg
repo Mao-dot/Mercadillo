@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!-- Etiqueta de precio en granate UPCH -->
+  <path d="M8 32 L32 8 L56 8 L56 32 L32 56 Z"
+        fill="white"
+        stroke="#A32D2D"
+        stroke-width="4"
+        stroke-linejoin="round" />
+  <!-- Agujero de la etiqueta -->
+  <circle cx="44" cy="20" r="4" fill="#A32D2D" />
+</svg>

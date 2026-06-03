@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi Perfil - Mercadillo Market UPCH</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- CABECERA -->
+  <header class="cabecera">
+    <a href="index.html" class="logo">
+      <img src="images/logo.svg" alt="Mercadillo Market">
+      <div class="logo-texto">
+        <span class="nombre">Mercadillo</span>
+        <span class="sub">Market UPCH</span>
+      </div>
+    </a>
+
+    <ul class="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="chatbot.html">Chatbot</a></li>
+      <li><a href="perfil.html" class="activo">Perfil</a></li>
+    </ul>
+
+    <div class="cabecera-acciones">
+      <a href="publicar.html" class="boton boton-principal">+ Publicar</a>
+      <a href="login.html" class="boton boton-secundario" id="boton-sesion">Iniciar sesión</a>
+    </div>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="contenedor">
+
+    <!-- INFORMACIÓN DEL USUARIO -->
+    <div class="perfil-cabecera">
+      <div class="avatar-grande" id="perfil-avatar">--</div>
+      <div class="perfil-info">
+        <h1 id="perfil-nombre">Cargando...</h1>
+        <div class="meta" id="perfil-meta">--</div>
+      </div>
+      <button class="boton boton-secundario" id="boton-cerrar-sesion">Cerrar sesión</button>
+    </div>
+
+    <!-- ESTADÍSTICAS DEL USUARIO -->
+    <div class="perfil-estadisticas">
+      <div class="estadistica">
+        <div class="valor" id="stat-publicaciones">0</div>
+        <div class="nombre">Publicaciones</div>
+      </div>
+      <div class="estadistica">
+        <div class="valor" id="stat-ventas">0</div>
+        <div class="nombre">En venta</div>
+      </div>
+      <div class="estadistica">
+        <div class="valor" id="stat-alquileres">0</div>
+        <div class="nombre">En alquiler</div>
+      </div>
+      <div class="estadistica">
+        <div class="valor" id="stat-buscos">0</div>
+        <div class="nombre">Busco</div>
+      </div>
+    </div>
+
+    <!-- LISTA DE MIS PUBLICACIONES -->
+    <div class="mis-publicaciones">
+      <h2>Mis publicaciones</h2>
+      <div class="grid-productos" id="lista-publicaciones"></div>
+    </div>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="pie-pagina">
+    <h3>Mercadillo Market UPCH</h3>
+    <p>Plataforma exclusiva para alumnos de la Universidad Peruana Cayetano Heredia</p>
+    <p>&copy; 2025 Proyecto Paradigmas de Programación</p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="js/data.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/perfil.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Publicar - Mercadillo Market UPCH</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- CABECERA -->
+  <header class="cabecera">
+    <a href="index.html" class="logo">
+      <img src="images/logo.svg" alt="Mercadillo Market">
+      <div class="logo-texto">
+        <span class="nombre">Mercadillo</span>
+        <span class="sub">Market UPCH</span>
+      </div>
+    </a>
+
+    <ul class="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="chatbot.html">Chatbot</a></li>
+      <li><a href="perfil.html">Perfil</a></li>
+    </ul>
+
+    <div class="cabecera-acciones">
+      <a href="publicar.html" class="boton boton-principal">+ Publicar</a>
+      <a href="login.html" class="boton boton-secundario" id="boton-sesion">Iniciar sesión</a>
+    </div>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="contenedor">
+
+    <!-- FORMULARIO DE PUBLICAR -->
+    <form class="formulario" id="formulario-publicar">
+      <h2>Publicar nuevo producto</h2>
+
+      <!-- TIPO DE PUBLICACIÓN -->
+      <div class="campo">
+        <label>Tipo de publicación:</label>
+        <div class="campo-radio">
+          <label><input type="radio" name="tipo" value="venta" checked> Venta</label>
+          <label><input type="radio" name="tipo" value="alquiler"> Alquiler</label>
+          <label><input type="radio" name="tipo" value="busco"> Busco</label>
+        </div>
+      </div>
+
+      <!-- TÍTULO -->
+      <div class="campo">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" placeholder="Ej: Calculadora Casio fx-991ES Plus">
+      </div>
+
+      <!-- DESCRIPCIÓN -->
+      <div class="campo">
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" placeholder="Describe el producto: estado, lo que incluye, detalles relevantes..."></textarea>
+      </div>
+
+      <!-- CATEGORÍA Y PRECIO -->
+      <div class="campo-doble">
+        <div class="campo">
+          <label for="categoria">Categoría:</label>
+          <select id="categoria">
+            <option value="libros">Libros</option>
+            <option value="laboratorio">Laboratorio</option>
+            <option value="electronica">Electrónica</option>
+            <option value="muebles">Muebles</option>
+            <option value="apuntes">Apuntes</option>
+            <option value="transporte">Transporte</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="precio" id="label-precio">Precio (S/):</label>
+          <input type="number" id="precio" placeholder="0" min="0">
+        </div>
+      </div>
+
+      <!-- SEDE -->
+      <div class="campo">
+        <label>Sede de entrega:</label>
+        <div class="campo-radio">
+          <label><input type="radio" name="sede" value="la_molina" checked> La Molina</label>
+          <label><input type="radio" name="sede" value="smp"> SMP</label>
+        </div>
+      </div>
+
+      <!-- CONDICIÓN (solo para venta) -->
+      <div class="campo" id="campo-condicion">
+        <label for="condicion">Condición:</label>
+        <select id="condicion">
+          <option value="Nuevo">Nuevo</option>
+          <option value="Casi nueva">Casi nueva</option>
+          <option value="Usado" selected>Usado</option>
+        </select>
+      </div>
+
+      <!-- BOTÓN DE PUBLICAR -->
+      <button type="submit" class="boton boton-principal boton-grande">Publicar producto</button>
+    </form>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="pie-pagina">
+    <h3>Mercadillo Market UPCH</h3>
+    <p>Plataforma exclusiva para alumnos de la Universidad Peruana Cayetano Heredia</p>
+    <p>&copy; 2025 Proyecto Paradigmas de Programación</p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="js/data.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/publicar.js"></script>
+
+</body>
+</html>

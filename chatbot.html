@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chatbot - Mercadillo Market UPCH</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- CABECERA -->
+  <header class="cabecera">
+    <a href="index.html" class="logo">
+      <img src="images/logo.svg" alt="Mercadillo Market">
+      <div class="logo-texto">
+        <span class="nombre">Mercadillo</span>
+        <span class="sub">Market UPCH</span>
+      </div>
+    </a>
+
+    <ul class="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="chatbot.html" class="activo">Chatbot</a></li>
+      <li><a href="perfil.html">Perfil</a></li>
+    </ul>
+
+    <div class="cabecera-acciones">
+      <a href="publicar.html" class="boton boton-principal">+ Publicar</a>
+      <a href="login.html" class="boton boton-secundario" id="boton-sesion">Iniciar sesión</a>
+    </div>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="contenedor">
+
+    <!-- CONTENEDOR DEL CHAT -->
+    <div class="contenedor-chat">
+
+      <!-- CABECERA DEL CHAT -->
+      <div class="chat-cabecera">
+        <img src="images/logo.svg" alt="Logo bot">
+        <div>
+          <div class="titulo">Mercadillo Bot</div>
+          <div class="subtitulo">Asesor virtual UPCH</div>
+        </div>
+      </div>
+
+      <!-- ÁREA DE MENSAJES -->
+      <div class="mensajes" id="cuerpo-chat">
+        <div class="mensaje bot">
+          ¡Hola! Soy el asesor virtual de Mercadillo Market. Puedes escribir
+          <strong>/listar</strong> para ver todos los productos, o preguntarme por
+          una categoría como "libros", "calculadora" o "molina".
+        </div>
+      </div>
+
+      <!-- ENTRADA DE MENSAJE -->
+      <div class="entrada">
+        <input type="text" id="input-mensaje" placeholder="Escribe tu mensaje...">
+        <button id="boton-enviar" disabled>Enviar</button>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="pie-pagina">
+    <h3>Mercadillo Market UPCH</h3>
+    <p>Plataforma exclusiva para alumnos de la Universidad Peruana Cayetano Heredia</p>
+    <p>&copy; 2025 Proyecto Paradigmas de Programación</p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="js/data.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/chatbot.js"></script>
+
+</body>
+</html>

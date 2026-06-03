@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Iniciar sesión - Mercadillo Market UPCH</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- CABECERA SIMPLE -->
+  <header class="cabecera">
+    <a href="index.html" class="logo">
+      <img src="images/logo.svg" alt="Mercadillo Market">
+      <div class="logo-texto">
+        <span class="nombre">Mercadillo</span>
+        <span class="sub">Market UPCH</span>
+      </div>
+    </a>
+  </header>
+
+  <!-- FORMULARIO DE LOGIN -->
+  <main>
+    <div class="contenedor-login">
+      <img src="images/logo.svg" alt="Logo">
+      <h1>Iniciar sesión</h1>
+      <p class="sub">Ingresa con tu correo institucional UPCH</p>
+
+      <form id="formulario-login">
+
+        <!-- CORREO -->
+        <div class="campo">
+          <label for="correo">Correo institucional:</label>
+          <input type="text" id="correo" placeholder="apellido.nombre@upch.pe">
+        </div>
+
+        <!-- CONTRASEÑA -->
+        <div class="campo">
+          <label for="contrasena">Contraseña:</label>
+          <input type="password" id="contrasena" placeholder="Mínimo 4 caracteres">
+        </div>
+
+        <!-- BOTÓN DE INGRESAR -->
+        <button type="submit" class="boton boton-principal boton-grande">Ingresar</button>
+
+      </form>
+
+      <a href="index.html" class="enlace">← Volver al inicio</a>
+    </div>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="pie-pagina">
+    <h3>Mercadillo Market UPCH</h3>
+    <p>&copy; 2025 Proyecto Paradigmas de Programación</p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="js/data.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/login.js"></script>
+
+</body>
+</html>

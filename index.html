@@ -2,20 +2,136 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Mercadillo Market — UPCH</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Plataforma exclusiva para alumnos UPCH para comprar, vender y alquilar artículos entre estudiantes.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <title>Mercadillo Market UPCH</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <!-- La app se monta acá -->
-  <div id="mm-root" class="mm-app"></div>
 
+  <!-- MODAL DE BIENVENIDA -->
+  <div class="modal-fondo" id="modal-bienvenida">
+    <div class="modal-bienvenida">
+      <img src="images/logo.svg" alt="Logo Mercadillo">
+
+      <!-- SLIDE 1 -->
+      <div class="slide" id="slide-1">
+        <h2>¡Bienvenido a Mercadillo Market UPCH!</h2>
+        <p>
+          Plataforma exclusiva para alumnos UPCH donde puedes comprar,
+          vender y alquilar artículos entre estudiantes.
+        </p>
+      </div>
+
+      <!-- SLIDE 2 -->
+      <div class="slide" id="slide-2" style="display: none;">
+        <h2>¿Cómo funciona?</h2>
+        <p>
+          Explora productos publicados por otros alumnos, filtra por sede
+          y categoría, y contáctalos por WhatsApp para coordinar la entrega.
+        </p>
+      </div>
+
+      <!-- SLIDE 3 -->
+      <div class="slide" id="slide-3" style="display: none;">
+        <h2>¡Empieza ahora!</h2>
+        <p>
+          Inicia sesión con tu correo @upch.pe y empieza a publicar o
+          buscar lo que necesitas.
+        </p>
+      </div>
+
+      <!-- BOTONES DEL MODAL -->
+      <div class="modal-botones">
+        <button class="boton boton-secundario" id="boton-atras" disabled>← Atrás</button>
+        <button class="boton boton-principal" id="boton-siguiente">Siguiente →</button>
+      </div>
+
+      <!-- INDICADORES DE SLIDE -->
+      <div class="indicadores">
+        <div class="indicador activo" id="ind-1"></div>
+        <div class="indicador" id="ind-2"></div>
+        <div class="indicador" id="ind-3"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CABECERA -->
+  <header class="cabecera">
+    <a href="index.html" class="logo">
+      <img src="images/logo.svg" alt="Mercadillo Market">
+      <div class="logo-texto">
+        <span class="nombre">Mercadillo</span>
+        <span class="sub">Market UPCH</span>
+      </div>
+    </a>
+
+    <ul class="menu">
+      <li><a href="index.html" class="activo">Inicio</a></li>
+      <li><a href="chatbot.html">Chatbot</a></li>
+      <li><a href="perfil.html">Perfil</a></li>
+    </ul>
+
+    <div class="cabecera-acciones">
+      <a href="publicar.html" class="boton boton-principal">+ Publicar</a>
+      <a href="login.html" class="boton boton-secundario" id="boton-sesion">Iniciar sesión</a>
+    </div>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="contenedor">
+
+    <!-- BARRA DE FILTROS -->
+    <div class="barra-filtros">
+
+      <!-- FILTRO POR SEDE -->
+      <div class="filtro-sede">
+        <button class="activo" data-sede="todas">Todas las sedes</button>
+        <button data-sede="la_molina">La Molina</button>
+        <button data-sede="smp">SMP</button>
+      </div>
+
+      <!-- FILTRO POR CATEGORÍA -->
+      <div class="filtros-categoria">
+        <button class="activo" data-categoria="todo">Todo</button>
+        <button data-categoria="venta">Venta</button>
+        <button data-categoria="alquiler">Alquiler</button>
+        <button data-categoria="busco">Busco</button>
+        <button data-categoria="libros">Libros</button>
+        <button data-categoria="laboratorio">Laboratorio</button>
+        <button data-categoria="electronica">Electrónica</button>
+        <button data-categoria="muebles">Muebles</button>
+        <button data-categoria="apuntes">Apuntes</button>
+        <button data-categoria="transporte">Transporte</button>
+      </div>
+
+      <!-- BUSCADOR DE TEXTO -->
+      <input type="text" class="buscador" id="buscador" placeholder="Buscar libros, calculadora, batas...">
+    </div>
+
+    <!-- TÍTULO DE SECCIÓN -->
+    <div class="titulo-seccion">
+      <div>
+        <h2>Productos disponibles</h2>
+        <p id="contador-productos">Cargando productos...</p>
+      </div>
+    </div>
+
+    <!-- LISTA DE PRODUCTOS (se llena desde feed.js) -->
+    <div class="grid-productos" id="lista-productos"></div>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="pie-pagina">
+    <h3>Mercadillo Market UPCH</h3>
+    <p>Plataforma exclusiva para alumnos de la Universidad Peruana Cayetano Heredia</p>
+    <p>&copy; 2025 Proyecto Paradigmas de Programación</p>
+  </footer>
+
+  <!-- SCRIPTS -->
   <script src="js/data.js"></script>
-  <script src="js/render.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/feed.js"></script>
+
 </body>
 </html>

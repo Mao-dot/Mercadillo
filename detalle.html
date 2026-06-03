@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Detalle del Producto - Mercadillo Market UPCH</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- CABECERA -->
+  <header class="cabecera">
+    <a href="index.html" class="logo">
+      <img src="images/logo.svg" alt="Mercadillo Market">
+      <div class="logo-texto">
+        <span class="nombre">Mercadillo</span>
+        <span class="sub">Market UPCH</span>
+      </div>
+    </a>
+
+    <ul class="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="chatbot.html">Chatbot</a></li>
+      <li><a href="perfil.html">Perfil</a></li>
+    </ul>
+
+    <div class="cabecera-acciones">
+      <a href="publicar.html" class="boton boton-principal">+ Publicar</a>
+      <a href="login.html" class="boton boton-secundario" id="boton-sesion">Iniciar sesión</a>
+    </div>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="contenedor">
+
+    <!-- BOTÓN DE VOLVER -->
+    <a href="index.html" class="boton-volver">← Volver al feed</a>
+
+    <!-- DETALLE DEL PRODUCTO -->
+    <div class="detalle" id="contenido-detalle">
+
+      <!-- IMAGEN DEL PRODUCTO -->
+      <div class="detalle-galeria">
+        <img src="images/producto.svg" alt="Producto">
+      </div>
+
+      <!-- INFORMACIÓN DEL PRODUCTO -->
+      <div class="detalle-info">
+
+        <!-- ETIQUETAS DE TIPO Y SEDE -->
+        <div class="detalle-meta">
+          <span class="etiqueta" id="producto-etiqueta">Venta</span>
+          <span class="sede" id="producto-sede"></span>
+        </div>
+
+        <!-- TÍTULO -->
+        <h1 id="producto-titulo">Cargando...</h1>
+
+        <!-- PRECIO -->
+        <div class="precio-grande" id="producto-precio"></div>
+
+        <!-- DESCRIPCIÓN -->
+        <p class="descripcion" id="producto-descripcion"></p>
+
+        <!-- CONDICIÓN (solo si aplica) -->
+        <p id="producto-condicion"></p>
+
+        <!-- TARJETA DEL VENDEDOR -->
+        <div class="detalle-vendedor">
+          <div class="avatar" id="vendedor-avatar">--</div>
+          <div class="info-vendedor">
+            <div class="nombre-vendedor" id="vendedor-nombre">--</div>
+            <div class="carrera-vendedor" id="vendedor-carrera">--</div>
+          </div>
+          <div id="vendedor-rating">--</div>
+        </div>
+
+        <!-- BOTÓN PARA CONTACTAR POR WHATSAPP -->
+        <button class="boton boton-wa boton-grande" id="boton-whatsapp">
+          Contactar por WhatsApp
+        </button>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="pie-pagina">
+    <h3>Mercadillo Market UPCH</h3>
+    <p>Plataforma exclusiva para alumnos de la Universidad Peruana Cayetano Heredia</p>
+    <p>&copy; 2025 Proyecto Paradigmas de Programación</p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="js/data.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/detalle.js"></script>
+
+</body>
+</html>
